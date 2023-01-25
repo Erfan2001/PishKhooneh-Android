@@ -45,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
         NavigationDelegate(
           onProgress: (int progress) {
             setState(
-                  () {
+              () {
                 progressValue = progress;
               },
             );
@@ -65,9 +65,20 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: body(),
+    return WillPopScope(
+      onWillPop: () async {
+        if (await webViewController.canGoBack()) {
+          await webViewController.goBack();
+
+          return false;
+        } else {
+          return true;
+        }
+      },
+      child: SafeArea(
+        child: Scaffold(
+          body: body(),
+        ),
       ),
     );
   }
@@ -107,12 +118,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ],
             ),
-        Flexible(
-          child: CircularProgressIndicator(
-            color: Color(0xFFD03859),
-            strokeWidth: 5.0,
-          ),
-        ),
+            Flexible(
+              child: CircularProgressIndicator(
+                color: Color(0xFFD03859),
+                strokeWidth: 5.0,
+              ),
+            ),
           ],
         ),
       );
