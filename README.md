@@ -1,6 +1,8 @@
-# pishkhooneh
+# Pishkhooneh - Android
 
-For free and as soon as possible Predict the price of your home.
+## Project description:
+
+This project in internet engineering utilizes the Flutter web view to showcase our website to Android users. It serves as an effective demonstration of our web platform's accessibility and functionality on the Android operating system. This project primarily focuses on predicting housing prices in major cities across Iran.
 
 ## Getting Started
 
@@ -14,3 +16,7 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+Implemented by Erfan Nourbakhsh
+
+January 2023
